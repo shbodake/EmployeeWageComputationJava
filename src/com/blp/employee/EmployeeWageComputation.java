@@ -1,30 +1,25 @@
 package com.blp.employee;
 
 public class EmployeeWageComputation {
-    public static final int  FULL_TIME = 1;
-    public static final int  PART_TIME = 0;
-    public static final int  WAGE_PER_HR = 20;
+    public static final int IS_PART_TIME = 1;
+    public static final int IS_FULL_TIME = 2;
+    public static final int EMP_RATE_PER_HOUR = 20;
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage Computation Program");
-        int workingHours = 0;
-        int empType = (int) (Math.random() * 100) % 2;
-        int empType1 = (int) (Math.random() * 100) % 3;
-        if (empType == FULL_TIME)
-        {
-            System.out.println("Employee is Present");
-            System.out.println("Employee is Present Full time");
-            workingHours = 8;
-        } else if (empType == PART_TIME)
-        {
-            System.out.println("Employee is Present Part time");
-            workingHours = 4;
-        } else
-        {
-            System.out.println("Employee is Absent");
+        int empHrs = 0;
+        int empWage = 0;
+        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+        switch (empCheck) {
+            case 1:
+                empHrs = 4;
+                break;
+            case 2:
+                empHrs = 8;
+                break;
+            default:
+                empHrs = 0;
         }
-        int wage = workingHours * WAGE_PER_HR;
-        System.out.println("Employee Daily Wage is " + wage);
+        empWage = empHrs * EMP_RATE_PER_HOUR;
+        System.out.println("Emp Wage:" + empWage);
     }
 }
-
