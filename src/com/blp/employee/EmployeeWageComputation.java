@@ -30,11 +30,13 @@ public class EmployeeWageComputation {
                     System.out.println("Employee is absent");
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
+            totalHours = totalHours + empHrs;
             totalWage = totalWage + empWage;
             System.out.println("Emp Wage: " + empWage);
             day++;
         }
         System.out.println("");
+        System.out.println("Total Working Hours in Month is " + totalHours);
         System.out.println("Total EmployeeWage Per Month is " + totalWage);
     }
 }
